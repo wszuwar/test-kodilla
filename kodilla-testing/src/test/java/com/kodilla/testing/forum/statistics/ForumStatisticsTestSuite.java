@@ -37,10 +37,6 @@ public class ForumStatisticsTestSuite {
         System.out.println("Preparing to execute test #" + testCounter);
     }
 
-
-
-
-
     @Test
     public void testStatistics01() {
         //Given
