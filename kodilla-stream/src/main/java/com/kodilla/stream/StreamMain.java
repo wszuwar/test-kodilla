@@ -23,9 +23,9 @@ public class StreamMain {
 
         PoemBeautifier poemBeautifier = new PoemBeautifier();
         poemBeautifier.beautify("Piekny text",(text) -> text.toUpperCase());
-        poemBeautifier.beautify("Wspaniale",(text ->  String.valueOf(new StringBuilder("ABC ").append(text.concat(" ABC")))));
+        poemBeautifier.beautify("Wspaniale",(text -> new StringBuilder("ABC ").append(text.concat(" ABC")).toString()));
         poemBeautifier.beautify("Jestes Boski",(text -> text.replace('e','3').replace('o','0').replace('a','@')));
-        poemBeautifier.beautify("Browar",(text -> String.valueOf(new StringBuilder(text).reverse())));
+        poemBeautifier.beautify("Browar",(text -> new  StringBuilder(text).reverse().toString()));
 
 
 
