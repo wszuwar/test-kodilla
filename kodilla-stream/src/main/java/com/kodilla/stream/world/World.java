@@ -8,8 +8,8 @@ import java.util.stream.Collectors;
 public final class World {
 
     private List<Continent> wordList = new ArrayList<>();
-    Continent continent;
-    public void addContinent(){
+
+    public void addContinent(Continent continent){
         wordList.add(continent);
     }
 
@@ -18,6 +18,9 @@ public final class World {
     }
 
     public BigDecimal getPeopleQuantity(){
-       return getPeopleQuantity();
+        return wordList.stream()
+                .flatMap(continent -> continent.getContinentList().stream()
+                .)
+
     }
 }

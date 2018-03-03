@@ -6,10 +6,10 @@ import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 public final class Continent {
-    Country country;
+
     private final List<Country> continentList = new ArrayList<>();
 
-    public void addCountry(){
+    public void addCountry(Country country){
         continentList.add(country);
     }
 
@@ -17,7 +17,4 @@ public final class Continent {
         return continentList;
     }
 
-    public Country getCountry() {
-        return country;
-    }
 }

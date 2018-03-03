@@ -5,9 +5,9 @@ import java.util.Objects;
 
 public final class Country {
     private final String countryName;
-    private final BigDecimal peopleQuantity;
+    private final long peopleQuantity;
 
-    public Country(final String countryName, final BigDecimal peopleQuantity) {
+    public Country(final String countryName, final long peopleQuantity) {
         this.countryName = countryName;
         this.peopleQuantity = peopleQuantity;
     }
@@ -30,8 +30,13 @@ public final class Country {
 
         return Objects.hash(countryName);
     }
-public BigDecimal getPeopleQuantity(){
+public long getPeopleQuantity(){
         return peopleQuantity;
+}
+
+public BigDecimal getPeopleQuantytyyy(){
+        BigDecimal ammountOfppl = new BigDecimal(peopleQuantity);
+        return ammountOfppl;
 }
 
 }
