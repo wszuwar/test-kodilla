@@ -6,6 +6,8 @@ import org.junit.Test;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.OptionalDouble;
+import java.util.stream.IntStream;
 
 import static java.util.stream.Collectors.toList;
 
@@ -138,6 +140,26 @@ public class BoardTestSuite {
         //Given
         Board project = prepareTestData();
         //When
+        List<TaskList> inProgressTasks = new ArrayList<>();
+        inProgressTasks.add(new TaskList("In progress"));
+        double nummberOfDays = project.getTaskLists().stream()
+                .filter(inProgressTasks::contains)
+                .flatMap(n -> n.getTasks().stream())
+                .mapToDouble(m ->  (m.getDeadline().getDayOfYear() -LocalDate.now().getDayOfYear())+
+                        (LocalDate.now().getDayOfYear() - m.getCreated().getDayOfYear()))
+                .sum();
+        double average = project.getTaskLists()
+                .stream()
+                .filter(inProgressTasks::contains)
+                .flatMap(n -> n.getTasks().stream())
+                .mapToDouble(m ->  (m.getDeadline().getDayOfYear() -LocalDate.now().getDayOfYear())+
+                        (LocalDate.now().getDayOfYear() - m.getCreated().getDayOfYear()))
+                .average()
+                .getAsDouble();
 
+        System.out.println(average);
+        //Then
+        Assert.assertEquals(55,nummberOfDays,0);
+        Assert.assertEquals(18.33,average,0.004);
     }
 }
