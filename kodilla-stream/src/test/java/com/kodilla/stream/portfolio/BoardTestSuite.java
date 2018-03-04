@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.OptionalDouble;
 import java.util.stream.IntStream;
 
+import static java.time.temporal.ChronoUnit.DAYS;
 import static java.util.stream.Collectors.toList;
 
 public class BoardTestSuite {
@@ -145,21 +146,19 @@ public class BoardTestSuite {
         double nummberOfDays = project.getTaskLists().stream()
                 .filter(inProgressTasks::contains)
                 .flatMap(n -> n.getTasks().stream())
-                .mapToDouble(m ->  (m.getDeadline().getDayOfYear() -LocalDate.now().getDayOfYear())+
-                        (LocalDate.now().getDayOfYear() - m.getCreated().getDayOfYear()))
+                .mapToDouble(m ->DAYS.between(m.getCreated(),LocalDate.now()) )
                 .sum();
         double average = project.getTaskLists()
                 .stream()
                 .filter(inProgressTasks::contains)
                 .flatMap(n -> n.getTasks().stream())
-                .mapToDouble(m ->  (m.getDeadline().getDayOfYear() -LocalDate.now().getDayOfYear())+
-                        (LocalDate.now().getDayOfYear() - m.getCreated().getDayOfYear()))
+                .mapToDouble(m ->DAYS.between(m.getCreated(),LocalDate.now()) )
                 .average()
                 .getAsDouble();
-
-        System.out.println(average);
+        System.out.println("Number of days :" + nummberOfDays);
+        System.out.println("Average :" + average);
         //Then
-        Assert.assertEquals(55,nummberOfDays,0);
-        Assert.assertEquals(18.33,average,0.004);
+        Assert.assertEquals(30,nummberOfDays,0);
+        Assert.assertEquals(10,average,0.004);
     }
 }
