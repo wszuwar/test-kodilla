@@ -20,6 +20,8 @@ public class ArrayOperationsTestSuite implements ArrayOperations {
         for (int n:array){
             average+=array[n];
             }
+
+
         average = average/array.length;
 
         //Then
