@@ -17,8 +17,8 @@ public class ArrayOperationsTestSuite implements ArrayOperations {
         }
       double expectedAverage = ArrayOperations.getAverage(array);
         double average=0;
-        for (double n:array){
-            average+=array[(int) n];
+        for (int n:array){
+            average+=array[n];
             }
         average = average/array.length;
 
