@@ -8,7 +8,7 @@ public class FlightMainApp {
 
         FlightFinder find = new FlightFinder();
         try {
-            find.findFlight(flight1);
+            find.findFlight(flight2);
         } catch (RouteNotFoundException e) {
             System.out.println("flight was not found");
         }
