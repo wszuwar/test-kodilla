@@ -3,9 +3,9 @@ package com.kodilla.good.patterns.challenges;
 import javax.jws.soap.SOAPBinding;
 
 public class SaleRequest {
-    public Product product;
-    public User user;
-    public int ammount;
+    private Product product;
+    private User user;
+    private int ammount;
 
     public SaleRequest(final Product product, final User user,final int ammount) {
         this.user = user;

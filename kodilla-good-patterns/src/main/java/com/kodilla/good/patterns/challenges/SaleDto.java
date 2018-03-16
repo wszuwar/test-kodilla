@@ -1,8 +1,8 @@
 package com.kodilla.good.patterns.challenges;
 
 public class SaleDto {
-    public User user;
-    public boolean isAvailable;
+    private User user;
+    private boolean isAvailable;
 
     public SaleDto(final User user, final boolean isAvailable) {
         this.user = user;
