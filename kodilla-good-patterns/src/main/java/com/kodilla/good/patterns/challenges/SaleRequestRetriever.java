@@ -11,4 +11,6 @@ public class SaleRequestRetriever {
         return new SaleRequest(product, user, ammount);
     }
 
+
+
 }

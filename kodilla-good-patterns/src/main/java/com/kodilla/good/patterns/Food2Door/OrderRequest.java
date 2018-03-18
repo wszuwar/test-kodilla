@@ -1,20 +1,24 @@
-package com.kodilla.good.patterns.challenges;
+package com.kodilla.good.patterns.Food2Door;
 
-
-
-public class SaleRequest {
+public class OrderRequest {
     private Product product;
+    private Shop shop;
     private User user;
     private int ammount;
 
-    public SaleRequest(final Product product, final User user,final int ammount) {
-        this.user = user;
+    public OrderRequest (final Product product, final Shop shop, final User user, final int ammount) {
         this.product = product;
+        this.shop = shop;
+        this.user = user;
         this.ammount = ammount;
     }
 
     public Product getProduct() {
         return product;
+    }
+
+    public Shop getShop() {
+        return shop;
     }
 
     public User getUser() {
