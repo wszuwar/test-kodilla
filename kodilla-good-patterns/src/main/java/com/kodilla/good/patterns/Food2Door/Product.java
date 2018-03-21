@@ -1,5 +1,7 @@
 package com.kodilla.good.patterns.Food2Door;
 
+import java.util.HashMap;
+
 public class Product {
     private String name;
     private double price;
