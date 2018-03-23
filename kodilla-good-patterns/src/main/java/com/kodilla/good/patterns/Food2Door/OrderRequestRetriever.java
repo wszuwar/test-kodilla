@@ -1,6 +1,6 @@
 package com.kodilla.good.patterns.Food2Door;
 
-import com.kodilla.good.patterns.Food2Door.*;
+
 
 import java.util.HashMap;
 import java.util.Set;
@@ -20,14 +20,16 @@ public class OrderRequestRetriever {
 
     public OrderRequest retrievier() {
         Product product = null;
+        Shop shop = null;
         Set<Product> products = productShopHashMap.keySet();
         for (Product p : products){
             product = p;
+            shop = productShopHashMap.get(p);
         }
 
                 User user = new User("Roman", "Czarnobyl", 997);
         int ammount = 3;
 
-        return new OrderRequest(product,productShopHashMap.get(product), user, ammount);
+        return new OrderRequest(product,shop, user, ammount);
     }
 }
