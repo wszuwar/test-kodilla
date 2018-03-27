@@ -33,6 +33,7 @@ public class Player {
         }
         System.out.println("This command doesnt exist try again");
         return getChoice();
+
     }
 
 }
