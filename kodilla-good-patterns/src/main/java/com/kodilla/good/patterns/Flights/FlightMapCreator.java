@@ -1,32 +1,23 @@
 package com.kodilla.good.patterns.Flights;
 
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.HashSet;
 
 public class FlightMapCreator {
-    public HashMap<String,ArrayList<String>> mapCreator (){
-        ArrayList<String> arivalsFromStavanger = new ArrayList<>();
-        arivalsFromStavanger.add("Krakow");
-        arivalsFromStavanger.add("Oslo");
-        arivalsFromStavanger.add("Gdansk");
-        arivalsFromStavanger.add("Katowice");
+    public HashSet<Flight> mapCreator (){
 
-        ArrayList<String> arivalsFromKrakow = new ArrayList<>();
-        arivalsFromKrakow.add("Stavanger");
-        arivalsFromKrakow.add("Oslo");
-        arivalsFromKrakow.add("Gdansk");
-        arivalsFromKrakow.add("katowice");
-
-        ArrayList<String> arivalsFromGdansk =  new ArrayList<>();
-        arivalsFromGdansk.add("Oslo");
-        arivalsFromGdansk.add("Krakow");
-        arivalsFromGdansk.add("katowice");
-
-        HashMap<String,ArrayList<String>> flyMap = new HashMap<>();
-        flyMap.put("Stavanger",arivalsFromStavanger);
-        flyMap.put("Krakow",arivalsFromKrakow);
-        flyMap.put("Gdansk",arivalsFromGdansk);
-
-        return flyMap;
+        HashSet<Flight> flyMap = new HashSet<>();
+       flyMap.add(new Flight("Krakow","Stavanger"));
+       flyMap.add(new Flight("Krakow","Gdansk"));
+       flyMap.add(new Flight("Krakow","Katowice"));
+       flyMap.add(new Flight("Krakow","Oslo"));
+       flyMap.add(new Flight("Stavanger","Krakow"));
+       flyMap.add(new Flight("Stavanger","Gdansk"));
+       flyMap.add(new Flight("Stavanger","Bergen"));
+       flyMap.add(new Flight("Stavanger","Katowice"));
+       flyMap.add(new Flight("Katowice","Krakow"));
+       flyMap.add(new Flight("Katowice","Stavanger"));
+       flyMap.add(new Flight("Katowice","Oslo"));
+     return flyMap;
     }
 }

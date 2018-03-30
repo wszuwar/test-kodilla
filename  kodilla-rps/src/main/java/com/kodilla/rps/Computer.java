@@ -11,7 +11,7 @@ public class Computer {
     }
 
     public PlayersChoice getchoice(){
-        int choice = 1+ random.nextInt(5);
+        int choice = 1 + random.nextInt(5);
         switch (choice){
             case 1:
                 return PlayersChoice.PAPER;

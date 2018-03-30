@@ -25,17 +25,18 @@ public class RpsRunner {
     boolean end = false;
     private int numberOfWInsPlayer = 0;
     private int numberOfWInsComputer = 0;
-    private String winsToENd;
+    private int winsToENd;
 
 
     private void start() {
         player = new Player();
         computer = new Computer();
         scanner = new Scanner(System.in);
+        Scanner scanner1 = new Scanner(System.in);
 
         System.out.println("Welcome in my game!!");
         System.out.println("Enter number of games to win");
-        winsToENd = scanner.nextLine();
+        winsToENd = scanner1.nextInt();
 
         do {
             System.out.println("1 - to choose PAPER");
@@ -49,7 +50,7 @@ public class RpsRunner {
             computersChoice = computer.getchoice();
             result = getResult();
             showResult();
-            if (numberOfWInsComputer == Integer.parseInt(winsToENd) || numberOfWInsPlayer == Integer.parseInt(winsToENd)) {
+            if (numberOfWInsComputer == winsToENd || numberOfWInsPlayer == winsToENd) {
                 end = true;
                 System.out.println("NUmber of your wins :" + numberOfWInsPlayer);
                 System.out.println("Numbers of your losses :" + numberOfWInsComputer);
