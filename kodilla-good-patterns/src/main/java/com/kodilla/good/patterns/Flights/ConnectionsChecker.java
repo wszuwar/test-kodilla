@@ -1,9 +1,6 @@
 package com.kodilla.good.patterns.Flights;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 
@@ -51,28 +48,40 @@ public class ConnectionsChecker implements CheckConnections {
     public boolean checkWithChange(FlightRequest flightRequest) {
         String depature = flightRequest.getDeparture();
         String arrival = flightRequest.getArrival();
-        HashSet<Flight> route = createdMap;
-        HashSet<Flight> route2 = createdMap;
+        List<Flight> route2 = new ArrayList<>();
 
-        route.stream()
-                .filter(s -> s.getDeparture().equals(depature) && s.getArrival().equals(arrival))
-                .forEach(s-> System.out.println("Found Direct flight From : " + depature + " to " + arrival));
-        if (route.contains(arrival)) {
-            System.out.println(route);
-            return true;
-        } else if (route.isEmpty()) {
+        route2 = createdMap.stream()
+                .filter(s -> s.getArrival().equals(arrival))
+                .collect(Collectors.toList());
+        if (!route2.isEmpty()) {
             route2.stream()
-                    .filter(s -> s.getArrival().equals(arrival))
-                    .forEach(s -> System.out.println("Found flight with change: " + depature + " to " + s.getDeparture() + " to " + arrival));
+                    .forEach(s -> System.out.println("Found flight with change from : " + depature +
+                            " by " + s.getDeparture() + " to " + s.getArrival()));
+            return true;
+        } else {
+            return false;
         }
-            if (!route2.contains(arrival)) {
-                System.out.println(route2);
-                return true;
-            }
-                System.out.println("Sorry! Flight not found");
-                return false;
-            }
-        }
+
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

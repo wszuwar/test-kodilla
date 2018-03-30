@@ -4,7 +4,7 @@ public class FlightRequestRetriever {
     public FlightRequest retrieve() {
         User user = new User("Czeslaw", "Galka", "czeslaw@spiewa.com");
         String departure = "Stavanger";
-        String arrival = "Krakow";
+        String arrival = "Oslo";
 
         return new FlightRequest(user, departure, arrival);
     }
