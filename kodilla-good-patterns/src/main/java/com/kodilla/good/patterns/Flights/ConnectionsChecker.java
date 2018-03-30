@@ -48,23 +48,36 @@ public class ConnectionsChecker implements CheckConnections {
     public boolean checkWithChange(FlightRequest flightRequest) {
         String depature = flightRequest.getDeparture();
         String arrival = flightRequest.getArrival();
+        String route = "";
         List<Flight> route2 = new ArrayList<>();
 
-        route2 = createdMap.stream()
-                .filter(s -> s.getArrival().equals(arrival))
-                .collect(Collectors.toList());
-        if (!route2.isEmpty()) {
-            route2.stream()
-                    .forEach(s -> System.out.println("Found flight with change from : " + depature +
-                            " by " + s.getDeparture() + " to " + s.getArrival()));
+        route = createdMap.stream()
+                .filter(s -> s.getDeparture().equals(depature) && s.getArrival().equals(arrival))
+                .map(s -> s.getDeparture() + " to " + s.getArrival())
+                .collect(Collectors.joining(route));
+        if (!route.isEmpty()) {
+            System.out.println("Found direct flight : " + route);
             return true;
-        } else {
-            return false;
-        }
+        } else if (route.isEmpty()) {
+            route2 = createdMap.stream()
+                    .filter(s -> s.getArrival().equals(arrival))
+                    .collect(Collectors.toList());
+            if (!route2.isEmpty()) {
+                System.out.println("Theres no direct flight checking for flight with change");
+                route2.stream()
+                        .forEach(s -> System.out.println("Found flight with change from : " + depature +
+                                " by " + s.getDeparture() + " to " + s.getArrival()));
+                return true;
+            }
 
+            }System.out.println("Theres no direct flight checking for flight with change");
+            System.out.println("Flight not found");
+        return false;
+        }
     }
 
-}
+
+
 
 
 
