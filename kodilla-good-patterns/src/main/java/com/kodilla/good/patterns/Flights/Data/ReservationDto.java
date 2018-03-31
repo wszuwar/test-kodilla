@@ -1,4 +1,6 @@
-package com.kodilla.good.patterns.Flights;
+package com.kodilla.good.patterns.Flights.Data;
+
+import com.kodilla.good.patterns.Flights.Data.User;
 
 public class ReservationDto {
     private User user;

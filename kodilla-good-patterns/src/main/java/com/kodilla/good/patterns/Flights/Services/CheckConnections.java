@@ -1,4 +1,6 @@
-package com.kodilla.good.patterns.Flights;
+package com.kodilla.good.patterns.Flights.Services;
+
+import com.kodilla.good.patterns.Flights.Data.FlightRequest;
 
 public interface CheckConnections {
     boolean checkDeparture(FlightRequest flightRequest);

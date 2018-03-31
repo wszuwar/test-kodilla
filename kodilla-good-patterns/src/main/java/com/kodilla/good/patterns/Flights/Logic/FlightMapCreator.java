@@ -1,6 +1,7 @@
-package com.kodilla.good.patterns.Flights;
+package com.kodilla.good.patterns.Flights.Logic;
 
-import java.util.ArrayList;
+import com.kodilla.good.patterns.Flights.Data.Flight;
+
 import java.util.HashSet;
 
 public class FlightMapCreator {

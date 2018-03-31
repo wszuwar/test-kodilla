@@ -1,4 +1,8 @@
-package com.kodilla.good.patterns.Flights;
+package com.kodilla.good.patterns.Flights.Logic;
+
+import com.kodilla.good.patterns.Flights.Services.CheckConnections;
+import com.kodilla.good.patterns.Flights.Data.Flight;
+import com.kodilla.good.patterns.Flights.Data.FlightRequest;
 
 import java.util.*;
 import java.util.stream.Collectors;

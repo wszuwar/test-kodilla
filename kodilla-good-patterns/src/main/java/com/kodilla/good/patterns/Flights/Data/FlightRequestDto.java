@@ -1,6 +1,6 @@
-package com.kodilla.good.patterns.Flights;
+package com.kodilla.good.patterns.Flights.Data;
 
-import javax.jws.soap.SOAPBinding;
+import com.kodilla.good.patterns.Flights.Data.User;
 
 public class FlightRequestDto {
     public User user;

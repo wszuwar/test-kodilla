@@ -1,4 +1,4 @@
-package com.kodilla.good.patterns.Flights;
+package com.kodilla.good.patterns.Flights.Data;
 
 public class Flight {
   private   String departure;

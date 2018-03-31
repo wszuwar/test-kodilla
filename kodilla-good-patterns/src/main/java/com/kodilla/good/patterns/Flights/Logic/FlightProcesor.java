@@ -1,4 +1,11 @@
-package com.kodilla.good.patterns.Flights;
+package com.kodilla.good.patterns.Flights.Logic;
+
+import com.kodilla.good.patterns.Flights.Data.FlightRequest;
+import com.kodilla.good.patterns.Flights.Data.FlightRequestDto;
+import com.kodilla.good.patterns.Flights.Services.CheckConnections;
+import com.kodilla.good.patterns.Flights.Services.InformationService;
+import com.kodilla.good.patterns.Flights.Services.RequestRepositoryService;
+import com.kodilla.good.patterns.Flights.Services.RequestService;
 
 public class FlightProcesor {
     private InformationService informationService;

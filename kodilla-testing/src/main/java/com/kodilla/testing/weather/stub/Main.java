@@ -43,18 +43,26 @@ public class Main {
     }
 
     public static Integer getMaxJava8(List<Integer> numbers) {
-    return 0;
+        int max = numbers.stream()
+                .collect(Collectors.summarizingInt(Integer::intValue)).getMax();
+    return max;
     }
 
     public static Integer getMinJava8(List<Integer> numbers) {
-    return 0;
+        int min = numbers.stream()
+                .collect(Collectors.summarizingInt(Integer::intValue)).getMin();
+    return min;
     }
 
     public static Integer getSumJava8(List<Integer> numbers) {
-    return 0;
+        int sum = numbers.stream()
+                .collect(Collectors.summingInt(Integer::intValue));
+    return sum;
     }
 
     public static Integer getAverageJava8(List<Integer> numbers) {
-    return 0;
+        int average = numbers.stream()
+                .collect(Collectors.averagingInt(Integer::intValue)).intValue();
+        return average;
     }
 }

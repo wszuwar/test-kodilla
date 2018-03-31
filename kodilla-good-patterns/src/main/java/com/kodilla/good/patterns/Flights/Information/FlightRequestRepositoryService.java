@@ -1,4 +1,7 @@
-package com.kodilla.good.patterns.Flights;
+package com.kodilla.good.patterns.Flights.Information;
+
+import com.kodilla.good.patterns.Flights.Data.FlightRequest;
+import com.kodilla.good.patterns.Flights.Services.RequestRepositoryService;
 
 public class FlightRequestRepositoryService implements RequestRepositoryService {
     @Override
