@@ -20,5 +20,4 @@ public final class TaskList {
         System.out.println("Added new task : " + task + " to List");
     }
 
-
 }
