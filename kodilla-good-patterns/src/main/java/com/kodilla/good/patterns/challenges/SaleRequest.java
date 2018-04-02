@@ -1,6 +1,6 @@
 package com.kodilla.good.patterns.challenges;
 
-import javax.jws.soap.SOAPBinding;
+
 
 public class SaleRequest {
     private Product product;
