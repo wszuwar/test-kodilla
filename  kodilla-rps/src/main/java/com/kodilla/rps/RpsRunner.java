@@ -52,7 +52,7 @@ public class RpsRunner {
             showResult();
             if (numberOfWInsComputer == winsToENd || numberOfWInsPlayer == winsToENd) {
                 end = true;
-                System.out.println("NUmber of your wins :" + numberOfWInsPlayer);
+                System.out.println("Number of your wins :" + numberOfWInsPlayer);
                 System.out.println("Numbers of your losses :" + numberOfWInsComputer);
             }
 
@@ -72,7 +72,7 @@ public class RpsRunner {
 
             case 'x':
                 end = true;
-                System.out.println("NUmber of your wins :" + numberOfWInsPlayer);
+                System.out.println("Number of your wins :" + numberOfWInsPlayer);
                 System.out.println("Numbers of your losses :" + numberOfWInsComputer);
 
         }

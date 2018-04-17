@@ -6,7 +6,6 @@ public class Computer {
     private Random random ;
 
     public Computer (){
-        super();
         random = new Random();
     }
 
