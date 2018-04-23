@@ -3,11 +3,10 @@ package com.kodilla.rps;
 import java.util.Scanner;
 import java.util.regex.Pattern;
 
-public class Player {
+public class Player{
     Scanner input;
 
     public Player() {
-        super();
         input = new Scanner(System.in);
 
     }

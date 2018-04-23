@@ -30,6 +30,7 @@ public class ConnectionsChecker implements CheckConnections {
         }
     }
 
+
     @Override
     public boolean checkArival(FlightRequest flightRequest) {
         String arrival = flightRequest.getArrival();
@@ -74,11 +75,12 @@ public class ConnectionsChecker implements CheckConnections {
                 return true;
             }
 
-            }System.out.println("Theres no direct flight checking for flight with change");
-            System.out.println("Flight not found");
-        return false;
         }
+        System.out.println("Theres no direct flight checking for flight with change");
+        System.out.println("Flight not found");
+        return false;
     }
+}
 
 
 
