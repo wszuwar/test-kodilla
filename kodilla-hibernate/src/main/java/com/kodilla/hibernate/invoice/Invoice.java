@@ -34,7 +34,7 @@ public class Invoice {
     @OneToMany(
             targetEntity = Item.class,
             mappedBy = "invoice",
-            cascade = CascadeType.MERGE,
+            cascade = CascadeType.ALL,
             fetch = FetchType.LAZY
     )
 
