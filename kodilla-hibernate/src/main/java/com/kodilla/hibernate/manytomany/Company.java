@@ -6,12 +6,15 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
-
+@NamedNativeQueries({
 @NamedNativeQuery(
         name = "Company.findByThreeSigns",
         query = "select * from companies where company_name like CONCAT(:COMPANY_NAME,'%')",
         resultClass = Company.class
-)
+),
+ @NamedNativeQuery(name = "Company.findByAnyPartOfNameCompany",
+query = "SELECT * FROM companies WHERE company_name LIKE CONCAT('%',:COMPANY_NAME,'%')",
+resultClass = Company.class)})
 
 @Entity
 @Table(name = "COMPANIES")

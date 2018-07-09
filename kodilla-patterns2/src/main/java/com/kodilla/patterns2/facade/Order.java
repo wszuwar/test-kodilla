@@ -1,11 +1,12 @@
 package com.kodilla.patterns2.facade;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Order {
     private ProductService productService;
-    List<Item> items;
+    private  List<Item> items = new ArrayList<>();
     private final Long orderId;
     private final Long userId;
     private boolean isPaid;
