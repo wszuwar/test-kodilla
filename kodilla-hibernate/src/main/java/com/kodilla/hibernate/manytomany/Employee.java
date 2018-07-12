@@ -4,6 +4,13 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
+@NamedQuery(
+        name = "Employee.findEmployeeByLastname",
+        query = "FROM Employee WHERE lastname = :LASTNAME")
+
+@NamedNativeQuery(name = "Employee.findByAnyPartOfNameEmploye",
+query = "SELECT * FROM Employees WHERE lastname LIKE CONCAT('%',:EMPLOYEE_LASTNAME,'%') ",
+resultClass = Employee.class)
 
 @Entity
 @Table(name = "EMPLOYEES")
