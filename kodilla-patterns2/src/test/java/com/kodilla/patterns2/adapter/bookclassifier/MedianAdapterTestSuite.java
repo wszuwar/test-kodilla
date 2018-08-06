@@ -10,12 +10,12 @@ import java.util.Set;
 
 public class MedianAdapterTestSuite {
     @Test
-    public void publicationYearMedianTest(){
+    public void publicationYearMedianTest() {
         //Given
         Set<Book> bookSet = new HashSet<>();
-        Book book = new Book("John Kapec","Ogniem i serem",1985,"9988");
-        Book book1 = new Book("Czeslaw Harnas","Napijmy Sie",2017,"8899");
-        Book book2 = new Book("Monika Halama","koko jumbo", 2005,"7799");
+        Book book = new Book("John Kapec", "Ogniem i serem", 1985, "9988");
+        Book book1 = new Book("Czeslaw Harnas", "Napijmy Sie", 2017, "8899");
+        Book book2 = new Book("Monika Halama", "koko jumbo", 2005, "7799");
 
         bookSet.add(book);
         bookSet.add(book1);
@@ -24,6 +24,6 @@ public class MedianAdapterTestSuite {
         MedianAdapter medianAdapter = new MedianAdapter();
         int result = medianAdapter.publicationYearMedian(bookSet);
         //Then
-        Assert.assertEquals(2005,result);
+        Assert.assertEquals(2005, result);
     }
 }
